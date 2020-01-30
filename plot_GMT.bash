@@ -14,6 +14,7 @@ fi
 scale=temp.cpt
 for ncfile in `cat product.lst`
   do
+		$mfont
     IFS='_' read -r year month prod  <<< ${ncfile:3}
   	if [[ ${prod:0:3} == "Chl" ]]; then
 			rm -f $scale
