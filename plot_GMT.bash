@@ -1,6 +1,6 @@
 #!/bin/bash
 source input_GMT.bash
-
+mkdir ./PNG
 if [ -f product.lst ]; then
 			rm product.lst
 	fi
@@ -49,15 +49,15 @@ for ncfile in `cat product.lst`
     #echo $loc1 "${month}, ${year}" | gmt pstext -R -J -O -K -F+f12p,Helvetica,white+jLB >> $ps
     #echo $loc2 "Chlorophyll-a" | gmt pstext -R -J -O -K -F+f12p,Helvetica,white+jLB >> $ps
 		if [[ ${prod:0:3} == "Chl" ]]; then
-			gmt psscale -C$scale $D -Bxaf -By+l"mg m@+-3@+" -S -O -N300i -t100 -Q >> $ps
+			gmt psscale -C$scale $D -Bxa+l"mg m@+-3@+" -S -O -N300i -t100 -Q >> $ps
 		elif [[ ${prod:0:3} == "SPM" ]]; then
-			gmt psscale -C$scale $D -Bxaf -By+l"g m@+-3@+" -S -O -N300i -t100 >> $ps
+			gmt psscale -C$scale $D -Bxa+l"g m@+-3@+" -S -O -N300i -t100 >> $ps
 		elif [[ ${prod:0:4} == "PARb" ]]; then
-			gmt psscale -C$scale $D -Bxaf -By+l"E m@+-2@+ day@+-1@+" -S -O -N300i -t100 -Q >> $ps
+			gmt psscale -C$scale $D -Bx0.5+l"E m@+-2@+ day@+-1@+" -S -O -N300i -t100 -Q >> $ps
 		elif [[ ${prod:0:4} == "PARs" ]]; then
-			gmt psscale -C$scale $D -Baf -By+l"E m@+-2@+ day@+-1@+" -S -O -N300i -t100 >> $ps
+			gmt psscale -C$scale $D -Bxa+l"E m@+-2@+ day@+-1@+" -S -O -N300i -t100 >> $ps
 		elif [[ ${prod:0:3} == "Sea" ]]; then
-			gmt psscale -C$scale $D -Bxaf -By -O -N300i -S -t100 >> $ps
+			gmt psscale -C$scale $D -Bxa+l"Sea Ice Fraction" -O -N300i -S -t100 >> $ps
 		else
 			echo "Cannot create scale, invalid image file."
 			continue
@@ -70,3 +70,4 @@ for ncfile in `cat product.lst`
 	done
 rm -f product.lst
 rm -f gmt.conf
+mv *.png ./PNG
