@@ -18,7 +18,7 @@ gmt gmtset COLOR_NAN 200
 mfont="gmt set FONT_ANNOT_PRIMARY 20p,Helvetica \
         MAP_GRID_CROSS_SIZE_PRIMARY 0.1i MAP_ANNOT_OFFSET_PRIMARY 0.2c"
 chlscale="-Cjet -T0/1/0.1 -Z -Do -Qi"
-spmscale="-Cdrywet -I -T0/1.4/0.1 -Z -Do -Qi"
+spmscale="-Cdrywet -I -T0/1.35/0.1 -Z -Do -Qi"
 parbscale="-Cpanoply -T-2/1/0.1 -Z -Do -Qi"
 parsscale="-Cpanoply -T0/60/1 -Z -Do"
 seaicescale="-Cblue,cyan,aquamarine,white -T0/1/0.1 -Z -Do"
