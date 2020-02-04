@@ -13,8 +13,9 @@ L=-Lf32.5/77/10/100+lkm #Scale
 T=-Tdg8/80.2+w0.8c+f+l,,,N #Rose
 #landmask=-ESJ+gdarkgrey+p0.25p,black+r # Svalbard
 landmask="-Dh -G120 -W0.2p,black"
-cfont="gmt set FONT_ANNOT_PRIMARY 14p,Helvetica FONT_TITLE 10p MAP_TITLE_OFFSET 0.1c MAP_ANNOT_OFFSET_PRIMARY 0.1c MAP_ANNOT_OFFSET_SECONDARY 0.1c MAP_LABEL_OFFSET 0.2c"
-gmt gmtset COLOR_NAN 200
+cfont="gmt set FONT_ANNOT_PRIMARY 14p,Helvetica FONT_TITLE 10p MAP_TITLE_OFFSET 0.1c \
+        MAP_ANNOT_OFFSET_PRIMARY 0.1c MAP_ANNOT_OFFSET_SECONDARY 0.1c MAP_LABEL_OFFSET 0.2c"
+gmt set COLOR_NAN 200
 mfont="gmt set FONT_ANNOT_PRIMARY 20p,Helvetica \
         MAP_GRID_CROSS_SIZE_PRIMARY 0.1i MAP_ANNOT_OFFSET_PRIMARY 0.2c"
 chlscale="-Cjet -T0/1/0.1 -Z -Do -Qi"
