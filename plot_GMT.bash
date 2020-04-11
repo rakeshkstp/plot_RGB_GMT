@@ -86,12 +86,12 @@ for ncfile in `cat product.lst`
 			continue
 		fi
 
-
-		if [[ ${prod:0:3} == "ICW" ]]; then
-			statname="Minimum"
-		fi
 		nc="${ncfile}?${statname}_${iprod}_${year}_${month}"
     ps="${product}_${statname}_${year}_${month}.ps"
+		if [[ ${prod:0:3} == "ICW" ]]; then
+			nc="${ncfile}?Minimum_${iprod}_${year}_${month}"
+	    ps="${product}_Minimum_${year}_${month}.ps"
+		fi
 
 
 		gmt grdimage $nc -C$scale -t100 $R $J -K -E300i -G100 > $ps
